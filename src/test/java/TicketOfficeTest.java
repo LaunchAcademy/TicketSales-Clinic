@@ -5,62 +5,42 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class TicketOfficeTest {
   @Test
   public void startsWithNoChildrenTickets() {
-    TicketOffice office = new TicketOffice();
-    assertEquals(office.getChildTicketsLeft(), 0);
+//Office starts with no tickets for children
   }
 
   @Test
   public void startsWithNoAdultTickets() {
-    TicketOffice office = new TicketOffice();
-    assertEquals(office.getAdultTicketsLeft(), 0);
+//Office starts with no tickets for adults
   }
 
   @Test
   public void restockChildTickets() {
-    TicketOffice office = new TicketOffice();
-    office.restockChildTickets(100);
-    assertEquals(office.getChildTicketsLeft(), 100);
+//a way to restock child tickets exists
   }
 
   @Test
   public void restockAdultTickets() {
-    TicketOffice office = new TicketOffice();
-    office.restockAdultTickets(100);
-    assertEquals(office.getAdultTicketsLeft(), 100);
+// a way to restock adult tickets exist
   }
 
   @Test
   public void makeTicketSaleReturnsObject() {
-    TicketOffice office = new TicketOffice();
-    office.restockAdultTickets(100);
-    office.restockChildTickets(50);
-    TicketSale ticketSale = office.makeSale(5, 4);
-    assertNotEquals(ticketSale, null);
+//test to make sure the makeSale method returns a TicketSale object
   }
 
   @Test
   public void makeTicketSalesReturnsNullWhenOutOfStock() {
-    TicketOffice office = new TicketOffice();
-    TicketSale ticketSale = office.makeSale(5, 4);
-    assertEquals(ticketSale, null);
+//makeSale method returns null if there arent enough tickets
   }
 
   @Test
   public void makeTicketSaleReducesAdultStock() {
-    TicketOffice office = new TicketOffice();
-    office.restockAdultTickets(100);
-    office.restockChildTickets(50);
-    TicketSale ticketSale = office.makeSale(5, 4);
-    assertEquals(office.getAdultTicketsLeft(), 95);
+//check to see if makeSale method reduces stock
   }
 
   @Test
   public void makeTicketSaleReducesChildStock() {
-    TicketOffice office = new TicketOffice();
-    office.restockAdultTickets(100);
-    office.restockChildTickets(50);
-    TicketSale ticketSale = office.makeSale(5, 4);
-    assertEquals(office.getChildTicketsLeft(), 46);
+    // check to see if makeSale method reduces stock
   }
 
 
